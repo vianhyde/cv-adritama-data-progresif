@@ -94,24 +94,6 @@ visualCards.forEach((card, index) => {
     observer.observe(card);
 });
 
-// Observe partner items
-const partnerItems = document.querySelectorAll('.partner-item');
-partnerItems.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    item.style.transition = `all 0.6s ease ${index * 0.08}s`;
-    observer.observe(item);
-});
-
-// Observe client items
-const clientItems = document.querySelectorAll('.client-item');
-clientItems.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    item.style.transition = `all 0.6s ease ${index * 0.08}s`;
-    observer.observe(item);
-});
-
 // Add parallax effect to hero decoration
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;

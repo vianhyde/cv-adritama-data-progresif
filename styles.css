@@ -619,39 +619,60 @@ body {
 
 /* Partners Section */
 .partners {
-    padding: 80px 24px;
+    padding: 60px 24px;
     background: var(--gray-50);
+    overflow: hidden;
 }
 
 .partners-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 60px;
+    margin: 0 auto 48px;
 }
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.partners-slider {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.partners-track {
+    display: flex;
     gap: 32px;
-    align-items: center;
+    animation: scrollPartners 30s linear infinite;
+}
+
+.partners-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollPartners {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .partner-item {
+    flex: 0 0 180px;
     background: var(--white);
-    padding: 32px;
+    padding: 24px;
     border-radius: 16px;
     border: 2px solid var(--gray-200);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 140px;
+    height: 120px;
 }
 
 .partner-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.05);
     box-shadow: 0 12px 30px rgba(74, 95, 165, 0.15);
     border-color: var(--primary-blue);
+    z-index: 10;
 }
 
 .partner-logo {
@@ -659,47 +680,71 @@ body {
     height: auto;
 }
 
-.partner-logo svg {
+.partner-logo svg,
+.partner-logo img {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 70px;
+    object-fit: contain;
 }
 
 /* Clients Section */
 .clients {
-    padding: 80px 24px;
+    padding: 60px 24px;
     background: var(--white);
+    overflow: hidden;
 }
 
 .clients-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 60px;
+    margin: 0 auto 48px;
 }
 
-.clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.clients-slider {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.clients-track {
+    display: flex;
     gap: 32px;
-    align-items: center;
+    animation: scrollClients 35s linear infinite;
+}
+
+.clients-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollClients {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .client-item {
+    flex: 0 0 180px;
     background: var(--white);
-    padding: 32px;
+    padding: 24px;
     border-radius: 16px;
     border: 2px solid var(--gray-200);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 140px;
+    height: 120px;
 }
 
 .client-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.05);
     box-shadow: 0 12px 30px rgba(239, 68, 68, 0.12);
     border-color: var(--accent-red);
+    z-index: 10;
 }
 
 .client-logo {
@@ -707,10 +752,13 @@ body {
     height: auto;
 }
 
-.client-logo svg {
+.client-logo svg,
+.client-logo img {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 70px;
+    object-fit: contain;
 }
 
 /* Contact Section Updates */
