@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. Adritama Data Progresif - MEP Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4A5FA5;
+            --secondary-blue: #5B6FB8;
+            --accent-red: #EF4444;
+            --dark-blue: #2A3A70;
+            --light-blue: #E8EBF7;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--gray-900);
+            background: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 24px;
+            background: var(--gray-50);
+        }
+        
+        .portfolio-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-600);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(74, 95, 165, 0.2);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .portfolio-image svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image svg {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            background: linear-gradient(to bottom, rgba(74,95,165,0.1) 0%, rgba(74,95,165,0.5) 50%, rgba(74,95,165,0.95) 100%);
+        }
+        
+        .portfolio-content {
+            color: var(--white);
+            width: 100%;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .portfolio-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .portfolio-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-category {
+            padding: 6px 16px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .portfolio-location {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .portfolio-year {
+            font-size: 16px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+    <section class="portfolio">
+        <div class="container">
+            <div class="portfolio-header">
+                <div class="section-badge">Portfolio</div>
+                <h2 class="section-title">Proyek Kami</h2>
+                <p class="section-description">
+                    Beberapa proyek yang telah kami kerjakan dengan hasil memuaskan
+                </p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4A5FA5;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#5B6FB8;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#grad1)"/>
+                            <text x="200" y="150" font-size="60" fill="white" text-anchor="middle" font-weight="bold">⚡</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Gedung Perkantoran Sudirman</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Elektrikal</span>
+                                <span class="portfolio-location">📍 Jakarta</span>
+                            </div>
+                            <p class="portfolio-year">2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#grad2)"/>
+                            <text x="200" y="150" font-size="60" fill="white" text-anchor="middle" font-weight="bold">🔥</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Mall Cihampelas</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Fire Alarm & Suppression</span>
+                                <span class="portfolio-location">📍 Bandung</span>
+                            </div>
+                            <p class="portfolio-year">2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#grad3)"/>
+                            <text x="200" y="150" font-size="60" fill="white" text-anchor="middle" font-weight="bold">❄️</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Hotel Grand Hyatt</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">AC & HVAC</span>
+                                <span class="portfolio-location">📍 Jakarta</span>
+                            </div>
+                            <p class="portfolio-year">2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#grad4)"/>
+                            <text x="200" y="150" font-size="60" fill="white" text-anchor="middle" font-weight="bold">📹</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Kompleks Perumahan BSD City</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">CCTV & Access Control</span>
+                                <span class="portfolio-location">📍 Tangerang</span>
+                            </div>
+                            <p class="portfolio-year">2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#grad5)"/>
+                            <text x="200" y="150" font-size="60" fill="white" text-anchor="middle" font-weight="bold">🌐</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Kampus Universitas Padjadjaran</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">IT Network</span>
+                                <span class="portfolio-location">📍 Bandung</span>
+                            </div>
+                            <p class="portfolio-year">2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#grad6)"/>
+                            <text x="200" y="150" font-size="60" fill="white" text-anchor="middle" font-weight="bold">💧</text>
+                        </svg>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3 class="portfolio-title">Apartemen Taman Anggrek</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Plumbing</span>
+                                <span class="portfolio-location">📍 Jakarta</span>
+                            </div>
+                            <p class="portfolio-year">2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

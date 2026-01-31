@@ -94,6 +94,15 @@ visualCards.forEach((card, index) => {
     observer.observe(card);
 });
 
+// Observe portfolio items
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+portfolioItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(40px)';
+    item.style.transition = `all 0.7s ease ${index * 0.12}s`;
+    observer.observe(item);
+});
+
 // Form submission handler
 function handleSubmit(event) {
     event.preventDefault();
