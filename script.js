@@ -94,64 +94,23 @@ visualCards.forEach((card, index) => {
     observer.observe(card);
 });
 
-// Observe portfolio items
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-portfolioItems.forEach((item, index) => {
+// Observe partner items
+const partnerItems = document.querySelectorAll('.partner-item');
+partnerItems.forEach((item, index) => {
     item.style.opacity = '0';
-    item.style.transform = 'translateY(40px)';
-    item.style.transition = `all 0.7s ease ${index * 0.12}s`;
+    item.style.transform = 'translateY(30px)';
+    item.style.transition = `all 0.6s ease ${index * 0.08}s`;
     observer.observe(item);
 });
 
-// Form submission handler
-function handleSubmit(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
-
-    // Validate form
-    if (!name || !email || !phone || !message) {
-        alert('Mohon lengkapi semua field!');
-        return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Format email tidak valid!');
-        return;
-    }
-
-    // Phone validation (Indonesian format)
-    const phoneRegex = /^(\+62|62|0)[0-9]{9,12}$/;
-    if (!phoneRegex.test(phone.replace(/[\s-]/g, ''))) {
-        alert('Format nomor telepon tidak valid!');
-        return;
-    }
-
-    // Create WhatsApp message
-    const whatsappMessage = `Halo CV. Adritama Data Progresif,%0A%0A` +
-        `Nama: ${name}%0A` +
-        `Email: ${email}%0A` +
-        `Telepon: ${phone}%0A%0A` +
-        `Pesan:%0A${message}`;
-
-    // Open WhatsApp
-    const whatsappNumber = '6289666667707'; // Format internasional
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
-
-    // Show success message
-    alert('Terima kasih! Anda akan diarahkan ke WhatsApp untuk melanjutkan percakapan.');
-
-    // Reset form
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('phone').value = '';
-    document.getElementById('message').value = '';
-}
+// Observe client items
+const clientItems = document.querySelectorAll('.client-item');
+clientItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(30px)';
+    item.style.transition = `all 0.6s ease ${index * 0.08}s`;
+    observer.observe(item);
+});
 
 // Add parallax effect to hero decoration
 window.addEventListener('scroll', () => {
@@ -220,11 +179,5 @@ if (aboutStats) {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
-
-// Prevent form default submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', handleSubmit);
-}
 
 console.log('CV. Adritama Data Progresif - Website loaded successfully! 🚀');
